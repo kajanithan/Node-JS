@@ -5,21 +5,25 @@ MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   console.log("Database created!");
   db.close();
-});
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/music";
+});*/
+
+/*var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
+
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
-  var dbo = db.db("songdetails");
-  dbo.createCollection("customers", function(err, res) {
+  var dbo = db.db("music");
+  dbo.createCollection("songdetails", function(err, res) {
     if (err) throw err;
     console.log("Collection created!");
     db.close();
   });
 });
+
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";MongoClient.connect(url, function(err, db) {
+var url = "mongodb://localhost:27017/";
+MongoClient.connect(url, function(err, db) {
  if (err) throw err;
  var dbo = db.db("music");
  var myobj = [
@@ -34,24 +38,27 @@ var url = "mongodb://localhost:27017/";MongoClient.connect(url, function(err, db
        db.close();
      });
    });
+   */
 
 
-});
 
 
+/*
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   var dbo = db.db("music");
-  var query = {musicDirector : "A.R.Rahman" };
+  var query = {musicDirector : "A.R.Rahman"  };
   dbo.collection("songdetails").find(query).toArray(function(err, result) {
     if (err) throw err;
     console.log(result);
     db.close();
   });
 });
+
+
 
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
@@ -65,27 +72,30 @@ MongoClient.connect(url, function(err, db) {
     db.close();
   });
 });
+*//*
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 
-MongoClient.connect(url, function(err, db) {
+MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
   if (err) throw err;
   var dbo = db.db("music");
-  var query = ({ $and:[{musicDirector:"A.R.Rahman"},{singer:"unnikirshnan"}] });
-  dbo.collection("songdetails").find(query).toArray(function(err, result) {
+  var query = ({ $and:[{musicDirector:"A.R.Rahman"},
+  { "singer" : "Swarnalatha"}] });
+  dbo.collection("songdetails").find(query).toArray(
+    function(err, result) {
     if (err) throw err;
     console.log(result);
     db.close();
   });
 });
-
+*//*
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   var dbo = db.db("music");
-  var myquery = { songName:'Tahniye Thananthaaniye' };
+  var myquery = { songname:'Tahniye Thananthaaniye' };
   dbo.collection("songdetails").deleteOne(myquery, function(err, obj) {
     if (err) throw err;
     console.log("1 document deleted");
@@ -113,14 +123,14 @@ var url = "mongodb://localhost:27017/";
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   var dbo = db.db("music");
-  var query = ( { $and:[{  Film: 'Minsara Kanavu',Singer: 'Hariharan' }]});;
+  var query = ( { $and:[{  film: 'Dheena',singer: 'Hariharan' }]});;
   dbo.collection("songdetails").find(query).toArray(function(err, result) {
     if (err) throw err;
     console.log(result);
     db.close();
   });
-});*/
-
+});
+*/
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 
